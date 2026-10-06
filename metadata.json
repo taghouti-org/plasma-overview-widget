@@ -1,0 +1,18 @@
+{
+    "KPlugin": {
+        "Id": "org.taghouti.overview",
+        "Name": "Overview",
+        "Description": "Show all windows and virtual desktops, and search for apps. Same as Meta+W.",
+        "Icon": "view-grid",
+        "Authors": [
+            {
+                "Name": "Tarek"
+            }
+        ],
+        "Category": "Windows and Tasks",
+        "License": "GPL",
+        "Version": "1.0"
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
