@@ -2,7 +2,7 @@
     "KPlugin": {
         "Id": "org.taghouti.overview",
         "Name": "Overview",
-        "Description": "Show all windows and virtual desktops, and search for apps. Same as Meta+W.",
+        "Description": "Open KWin Overview: all windows, all virtual desktops and app search. Can take over the Meta key.",
         "Icon": "view-grid",
         "Authors": [
             {
@@ -11,8 +11,11 @@
         ],
         "Category": "Windows and Tasks",
         "License": "GPL",
-        "Version": "1.0"
+        "Version": "1.1"
     },
     "KPackageStructure": "Plasma/Applet",
-    "X-Plasma-API-Minimum-Version": "6.0"
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.launchermenu"
+    ]
 }
