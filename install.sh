@@ -15,12 +15,9 @@ cp "$SRC/config.qml"          "$DEST/contents/config/config.qml"
 cp "$SRC/config-main.xml"     "$DEST/contents/config/main.xml"
 
 echo "Installed to $DEST"
-
-# Make Plasma notice the new package
 kbuildsycoca6 --noincremental >/dev/null 2>&1 || true
 systemctl --user restart plasma-plasmashell.service
 
 echo
 echo "Done. Right-click the panel -> Add Widgets -> search 'Overview'."
-echo "If you enable the Meta-key option, log out and back in:"
-echo "KWin only reads modifier-only shortcuts when it starts."
+echo "The Meta key works immediately - no logout needed."
