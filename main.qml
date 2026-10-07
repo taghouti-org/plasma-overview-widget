@@ -43,10 +43,27 @@ PlasmoidItem {
 
     // Keep kwinrc in sync with the checkbox. Applied on change and at startup so
     // the setting survives even if it is edited elsewhere.
+    // KWin ignores a custom ModifierOnlyShortcuts entry that carries arguments, so
+    // bare Meta must stay on KWin's default action, activateLauncherMenu. This widget
+    // declares itself the launcher (X-Plasma-Provides) and turns that activation into
+    // "open Overview" below, which is why pressing Meta works at all.
+    readonly property string metaDefault:
+        "org.kde.plasmashell,/PlasmaShell,org.kde.PlasmaShell,activateLauncherMenu"
+
     function applyMetaBinding() {
-        var value = Plasmoid.configuration.metaKey ? root.metaOverview : root.metaLauncher
-        run("kwriteconfig6 --file kwinrc --group ModifierOnlyShortcuts --key Meta \"" + value
+        run("kwriteconfig6 --file kwinrc --group ModifierOnlyShortcuts --key Meta \"" + root.metaDefault
             + "\" && qdbus6 org.kde.KWin /KWin reconfigure")
+    }
+
+    // Plasma "expands" a launcher applet when Meta is pressed. Collapse it again and
+    // trigger Overview instead of showing an empty popup.
+    onExpandedChanged: {
+        if (root.expanded) {
+            root.expanded = false
+            if (Plasmoid.configuration.metaKey) {
+                run(root.overviewCmd)
+            }
+        }
     }
 
     Connections {
