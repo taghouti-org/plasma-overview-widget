@@ -11,6 +11,8 @@ mouse — and, optionally, with the bare **Meta** key.
 
 Tested on Kubuntu 26.04 / Plasma 6.6 / Wayland.
 
+![Widget settings: icon chooser, Meta key opens Overview, middle-click opens Grid View](docs/screenshots/settings.png)
+
 ## How it works
 
 It does not reimplement anything. It invokes the global shortcut KWin already
