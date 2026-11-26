@@ -128,7 +128,3 @@ Four things cost me real time here:
 ## License
 
 GPL-3.0-or-later
-
----
-
-First published as a [gist](https://gist.github.com/taghouttarek/840a602bd99bf3588beacf7b2e2d991d).
